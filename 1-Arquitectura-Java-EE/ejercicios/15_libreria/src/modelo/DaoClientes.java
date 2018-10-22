@@ -1,0 +1,59 @@
+package modelo;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class DaoClientes {
+	public boolean autenticarCliente(String usuario, String password) {
+		boolean result = false;
+		try (Connection cn = Datos.obtenerConexion();) {			
+			String sql = "Select * from clientes where usuario=? and password=?";
+			
+			PreparedStatement ps = cn.prepareStatement(sql);			
+			ps.setString(1,  usuario);
+			ps.setString(2,  password);
+			
+			ResultSet rs = ps.executeQuery();
+
+			if (rs.next()) {				
+				result = true;	        
+			}
+		}
+		catch(SQLException ex) {
+			ex.printStackTrace();
+		}
+		
+		return result;
+	}
+	
+
+	public int registrarCliente(String usuario, String password, String email, int telefono) {
+		int result = 0;
+		try (Connection cn = Datos.obtenerConexion();) {
+			String sql = "Insert into clientes(usuario, password, email, telefono) values (?, ?, ?, ?)";
+			
+			PreparedStatement ps = cn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);			
+			ps.setString(1,  usuario);
+			ps.setString(2,  password);
+			ps.setString(3,  email);
+			ps.setInt(4,  telefono);
+			
+			ps.execute();
+			
+			ResultSet rs = ps.getGeneratedKeys();
+			if (rs.next()){
+				result=rs.getInt(1);
+			}
+			
+			System.out.println(result);
+		}
+		catch(SQLException ex) {
+			ex.printStackTrace();
+		}
+		
+		return result;
+	}
+}
