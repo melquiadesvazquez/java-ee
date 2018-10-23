@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+	<meta charset="utf-8" />
+	<title>Cursos</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />
+</h:head>
+<h:body> 	
+	<div class="jumbotron" style="width:500px;margin:20px auto;">
+		<h:form>
+			<h:selectOneMenu value="#{listasBean.codigo}">
+				<f:selectItem itemValue="0" itemLabel="-buscador-"/>
+				<f:selectItems value="#{listasBean.ciudades}" var="t" itemLabel="#{t.nombre}" itemValue="#{t.codigo}"/>
+			</h:selectOneMenu>
+			
+			<br><br>
+			
+			<h:commandButton action="resultado" value="Enviar"/>
+			<h:commandButton value="Mostrar aqui"/>
+     	</h:form>
+     	
+     	El código es: <h:outputText value="#{listasBean.codigo}" />
+	</div>
+</h:body> 
+</html>
+

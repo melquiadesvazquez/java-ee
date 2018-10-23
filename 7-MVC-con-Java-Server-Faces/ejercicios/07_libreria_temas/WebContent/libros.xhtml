@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head></h:head> 
+<h:body> 
+	<h1>Libros de ${sessionScope.usuario}</h1>
+	<h:form>
+		<h:dataTable var="l" value="#{librosBean.libros}" rendered="#{!empty librosBean.libros}">
+			<h:column>
+				<f:facet name="header">Titulo</f:facet>
+				<h:outputText value="#{l.titulo}"/>
+			</h:column>
+			<h:column>
+				<f:facet name="header">Precio</f:facet>
+				#{l.precio}
+			</h:column>
+			<h:column>
+				<f:facet name="header">Editar</f:facet>
+				<h:commandLink action="#{librosBean.editar(l)}" value="Editar" styleClass="btn"/>
+			</h:column>
+		</h:dataTable>
+	</h:form>
+	<br/>
+	<br/>
+	<h:link value="Atras" outcome="temas"/>
+</h:body> 
+</html>

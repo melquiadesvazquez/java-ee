@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+	<meta charset="utf-8" />
+	<title>Editar libro</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />
+</h:head>
+<h:body> 	
+	<div class="jumbotron" style="width:500px;margin:20px auto;">
+		<h:form>
+		  <div class="form-group row">
+		    <label for="usuario" class="col-sm-2 col-form-label">Titulo</label>
+		    <div class="col-sm-10">
+		      <h:inputText styleClass="form-control" value="#{libroBean.libro.titulo}" />
+		    </div>
+		  </div>
+		  <div class="form-group row">
+		    <label for="password" class="col-sm-2 col-form-label">Autor</label>
+		    <div class="col-sm-10">
+		      <h:inputText styleClass="form-control" value="#{libroBean.libro.autor}" />
+		    </div>
+		  </div>
+		  <div class="form-group row">
+		    <label for="email" class="col-sm-2 col-form-label">Paginas</label>
+		    <div class="col-sm-10">
+		      <h:inputText styleClass="form-control" value="#{libroBean.libro.paginas}" />
+		    </div>
+		  </div>
+		  <div class="form-group row">
+		    <label for="telefono" class="col-sm-2 col-form-label">Precio</label>
+		    <div class="col-sm-10">
+		      <h:inputText styleClass="form-control" value="#{libroBean.libro.precio}" />
+		    </div>
+		  </div>
+		  <h:commandButton styleClass="btn btn-primary btn-lg" action="#{libroBean.actualizar()}" value="Actualizar"/>
+		</h:form>
+     	<h:link value="Volver" outcome="libros" styleClass="btn"/>
+	</div>
+</h:body> 
+</html>

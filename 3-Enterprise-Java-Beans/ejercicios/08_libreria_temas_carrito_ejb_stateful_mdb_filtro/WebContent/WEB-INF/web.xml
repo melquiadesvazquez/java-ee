@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
+  <display-name>08_libreria_temas_carrito_ejb_stateful_mdb_filtro</display-name>
+  <welcome-file-list>
+    <welcome-file>login.html</welcome-file>
+  </welcome-file-list>
+  <resource-ref>
+    <res-ref-name>aliaslibros</res-ref-name>
+    <res-type>javax.sql.DataSource</res-type>
+    <res-auth>Container</res-auth>
+  </resource-ref>
+  
+  <!-- Filtros -->
+  <!-- 
+  <filter>
+  	<filter-name>mifiltro</filter-name>
+  	<filter-class>filtros.FiltroLibros</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>mifiltro</filter-name>
+  	<url-pattern>/Controller</url-pattern>
+  </filter-mapping>
+   -->
+</web-app>

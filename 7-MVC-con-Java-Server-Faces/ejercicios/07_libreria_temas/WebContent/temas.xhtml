@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head></h:head> 
+<h:body> 
+	<h1>Sr.a <h:outputText value="#{loginBean.usuario}"/> bienvenido a JSF</h1>
+	<br/>
+	<br/>
+	
+	<h:form>
+		<h:selectOneMenu value="#{temasBean.temaElegido}">
+			<f:selectItem itemValue="0" itemLabel="-tema-"/>
+			<f:selectItems value="#{temasBean.temas}" var="t" itemLabel="#{t.tema}" itemValue="#{t.idTema}"/>
+		</h:selectOneMenu>
+		<h:commandButton action="libros" value="Ver libros"/>
+	</h:form>
+
+	<br/>
+	<br/>
+	<h:link value="Atras" outcome="login"/>
+</h:body> 
+</html>

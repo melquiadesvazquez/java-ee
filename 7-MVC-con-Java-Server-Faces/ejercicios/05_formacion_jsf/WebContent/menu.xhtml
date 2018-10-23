@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+	<meta charset="utf-8" />
+	<title>Cursos</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />
+</h:head>
+<h:body> 	
+	<div class="jumbotron" style="width:500px;margin:20px auto;">
+		<h:form>
+			<h:commandLink styleClass="btn btn-primary btn-lg" value="Ver Alumnos" action="#{alumnosBean.mostrarAlumnos()}" />
+			<br/><br/>
+	     	<h:commandLink styleClass="btn btn-primary btn-lg" value="Ver Cursos" action="#{cursosBean.mostrarCursos()}" />
+     	</h:form>
+	</div>
+</h:body> 
+</html>
+
